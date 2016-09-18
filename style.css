@@ -1,0 +1,207 @@
+* {
+	padding: 0;
+	margin: 0;
+	/*text-align: center;*/
+}
+
+body{
+ 	min-height: 1300px;
+ 	font-family: "Segoe UI",Arial,sans-serif;
+	background-color: #ddd;
+ }
+
+header {
+	margin-top: 150px;
+	background-color: #808080;
+	overflow: hidden;
+	text-align: center;
+
+}
+
+header span {
+	text-decoration: none;
+	font-size: 2em;
+	padding: 1em 1em;
+	display: inline-block;
+	color: #fff;
+	cursor: pointer;
+}
+
+header span:hover {
+	background-color: #5d5c5c;
+}
+
+.fix {
+	margin-top: 150px;
+}
+
+.fix header {
+	margin-top: 0;
+	position: fixed;
+	top: 0;
+	right: 0;
+	left: 0;
+	background-color:#2985ce;
+}
+
+.fix header span:hover{
+	background-color: #2b79b7
+}
+
+section.num1 {
+	background-color: #3292de;
+}
+
+section.num2 {
+	background-color: #2dd458;
+}
+
+.sec2 header span:hover{
+	background-color: #22ad46;
+}
+
+.sec3 header span:hover{
+	background-color: #c6ce31;
+}
+
+.sec2 header span, .sec header span {
+	color: #fff;
+}
+
+.sec2 header {
+	background-color: #27bd4e;
+	transition :.3s;
+}
+
+.sec3 header {
+	background-color: #d2da40;
+	transition :.3s;
+}
+
+.fix div.main {
+	margin-top: 250px;
+}
+
+
+/*------------------------------------------------------------------------pop up*/
+
+#div {
+	background-color: #2196F3;
+	width: 400px;
+	height: 200px;
+	position: absolute;
+	right: 0;
+	opacity: 0;
+	transition:.5s;
+	margin: 0 5px 5px 0;
+}
+
+#div.popup{
+	position: fixed;
+	bottom: 0;
+	opacity: 1;
+}
+
+/*------------------------------------>> section >>*/
+section {
+	width: 100%;
+	padding: 1em 0;
+}
+
+section.num1 {
+	padding: 1em 0 ;
+}
+
+section.num2 {
+	/*height: 500px;*/
+}
+
+section.num3 {
+	/*height: 500px;*/
+	background-color: #e9f338;
+}
+
+section.num4 {
+	height: 500px;
+	background-color: #2dd458;
+}
+
+/*------------------------------------>> pop-box >>*/
+.pop-box h3 {
+	text-align: center;
+    margin-top: 20px;
+    color: #1d2f8a;
+    font-size: 2em;
+    font-family: "Segoe UI",Arial,sans-serif;
+}
+
+/*-------------------------------------------------------sidebar mov*/
+aside {
+	top: 0;
+    background-color: #606067;
+    left: -250px;
+    font-size: 2em;
+    transition :.3s;
+	position: absolute;
+}
+
+.active {
+	top: 0;
+    background-color: #707077;
+	text-align: center;
+	font-size: 2em;
+	transition:.3s;
+	left: 0;
+	position: fixed;
+}
+
+aside a {
+	display: block;
+	text-decoration: none;
+	background-color: #707077;
+	padding: .5em 2em;
+	color: #fff;
+}
+
+aside a:hover {
+	background-color: #464646;
+	color: #fff;
+}
+
+ section pre{
+ 	margin: 1em auto;
+ 	max-width: 80%;
+ 	background-color: #ddd;
+ 	padding: 1em 2em;
+ 	/*font-family: "Helvetica Neue", "Helvetica", Helvetica, Arial, sans-serif;*/
+
+ }
+
+ section pre p {
+ 	    font-family: 'Ubuntu', sans-serif;
+ 	    overflow: hidden;
+ }
+
+ section pre h2 {
+ 	/*text-align: center;*/
+ 	font-size: 3em;
+    color: #4e4e4e;
+ }
+
+  section pre .code {
+  	font-family: Consolas, Monaco, 'Andale Mono', monospace;
+  	max-width: 50%;
+  	max-height: 150px;
+  	overflow: hidden;
+  	margin: 0 auto;
+  	font-size: .9em;
+  	padding:1.5em;
+  	background-color: #3e3e3e;
+    color: #f3f3f3;
+    border: 3px solid #1d1d1d;
+  }
+
+  section pre .code:hover {
+  	overflow-y: scroll ;
+
+  }

@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Document</title>
+  	<meta charset="UTF8">
+	<link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+	<header>
+		<span href="">Home</span>
+		<span href="#">About</span>
+		<span href="#" id="btn" class="button">Other sidebar</span>
+	</header>
+	<div class="main">
+		<section class="num1" id="num1">
+			<pre>
+				<h2>Aside move</h2>
+				<p>First of all click on bottun "Other aside" in  header.
+you will see from left side, aside bar will be visible and if you click again asidebar will be hidden.
+so if you wanna do that you shold add 3 type of codes
+
+the first is: <b>HTML</b> </p>
+				<div class="code"><xmp>
+<header>
+	<span href="">Home</span>
+	<span href="#">About</span>
+	<span href="#" id="btn" class="button">Other sidebar</span>
+</header>
+
+<aside id="aside">
+	<a href="#">Home</a>
+	<a href="#">Contact</a>
+	<a href="#">Other</a>
+	<a href="#">Email</a>
+	<a href="#">Info</a>
+</aside></xmp>
+</div>
+
+<p>the second :<b>CSS</b></p>
+<div class="code">
+header {
+	margin-top: 150px;
+	background-color: #808080;
+	overflow: hidden;
+	text-align: center;
+
+}
+
+header span {
+	text-decoration: none;
+	font-size: 2em;
+	padding: 1em 1em;
+	display: inline-block;
+	color: #fff;
+}
+
+header span:hover {
+	background-color: #5d5c5c;
+}
+
+aside {
+	top: 0;
+  background-color: #606067;
+  left: -250px;
+  font-size: 2em;
+  transition :.3s;
+	position: absolute;
+}
+
+.active {
+	top: 0;
+  background-color: #707077;
+	text-align: center;
+	font-size: 2em;
+	transition:.3s;
+	left: 0;
+}
+
+aside a {
+	display: block;
+	text-decoration: none;
+	background-color: #707077;
+	padding: .5em 2em;
+	color: #fff;
+}
+
+aside a:hover {
+	background-color: #464646;
+	color: #fff;
+}
+</div>
+<p>the third :<b>JS</b></p>
+<div class="code">
+document.getElementsByClassName("button")[0].addEventListener("click", moveSidebar);
+
+function moveSidebar()
+{
+	var aside = document.getElementById('aside');
+	if(aside.className)
+	{
+		aside.className = "";
+	}
+	else
+	{
+		aside.className = "active";
+	}
+}
+</div>
+</pre>
+			<aside id="aside">
+				<a href="#">Home</a><a href="#">Contact</a><a href="#">Other</a><a href="#">Email</a><a href="#">Info</a>
+			</aside>
+		</section>
+
+		<section class="num2">
+				<pre>
+					<h2>Header fixed</h2>
+					<p>as you can see when scroll down the mouse the header will be fixed and when you contnue to scroll the color of header is changing
+so if you wanna do that you shold add 3 type of codes
+
+
+the first is: <b>HTML</b> </p>
+<div class="code"><xmp>
+<header>
+	<span href="">Home</span>
+	<span href="#">About</span>
+	<span href="#" id="btn" class="button">Other sidebar</span>
+</header>
+<div class="main">
+	<section class="num1" > </section>
+	<section class="num2" > </section>
+	<section class="num3" > </section>
+	<section class="num4" > </section>
+</div></xmp>
+</div>
+
+<p>the second :<b>CSS</b></p>
+<div class="code">
+header {
+	margin-top: 150px;
+	background-color: #808080;
+	overflow: hidden;
+	text-align: center;
+
+}
+
+header span {
+	text-decoration: none;
+	font-size: 2em;
+	padding: 1em 1em;
+	display: inline-block;
+	color: #fff;
+	cursor: pointer;
+}
+
+header span:hover {
+	background-color: #5d5c5c;
+}
+
+.fix {
+	margin-top: 150px;
+}
+
+.fix header {
+	margin-top: 0;
+	position: fixed;
+	top: 0;
+	right: 0;
+	left: 0;
+	background-color:#2985ce;
+}
+
+.fix header span:hover{
+	background-color: #2b79b7
+}
+
+section.num1 {
+	background-color: #3292de;
+}
+
+section.num2 {
+	background-color: #2dd458;
+}
+
+section.num3 {
+	background-color: #e9f338;
+}
+
+section.num4 {
+	background-color: #2dd458;
+}
+.sec2 header span:hover{
+	background-color: #22ad46;
+}
+
+.sec3 header span:hover{
+	background-color: #c6ce31;
+}
+
+.sec2 header span, .sec header span {
+	color: #fff;
+}
+
+.sec2 header {
+	background-color: #27bd4e;
+	transition :.3s;
+}
+
+.sec3 header {
+	background-color: #d2da40;
+	transition :.3s;
+}
+
+.fix div.main {
+	margin-top: 250px;
+}
+
+</div>
+<p>the third :<b>JS</b></p>
+<div class="code">
+document.addEventListener("scroll", fixHeader);
+function fixHeader ()
+{
+	var CNum1 = document.getElementsByClassName("num1")[0];
+	var CNum2 = document.getElementsByClassName("num2")[0];
+	var CNum3 = document.getElementsByClassName("num3")[0];
+
+	var sec2 = parseInt(CNum1.offsetTop);
+	var sec2 = parseInt(CNum2.offsetTop);
+	var sec3 = parseInt(CNum3.offsetTop);
+
+	var headerHeight = document.getElementsByTagName("header")[0].offsetHeight;
+
+	var body = document.body;
+	var scroll = document.body.scrollTop;
+	var cName = "";
+
+	if(scroll < 150)
+	{
+		cName = "";
+	}
+	else if (scroll > 150)
+	{
+		cName = " fix";
+		if ((scroll)+headerHeight > sec2)
+		{
+			cName += " sec2";
+		}
+		if ((scroll)+headerHeight > sec3)
+		{
+			cName += " sec3";
+		}
+	}
+	body.className = cName;
+}
+</div>
+</pre>
+		</section>
+
+		<section class="num3">
+			<pre>
+					<h2>Pop up</h2>
+					<p>if you scroll down until buttom of page you will see the "pop up" right side of page will be appear
+if you wanna do that you need 3 type of codes
+the first is: <b>HTML</b> </p>
+<div class="code"><xmp>
+<section class="num4">
+	<div id="div" class="div">
+		<div class="pop-box">
+		  <h3>This is pop up</h3>
+		</div>
+	</div>
+</section></xmp>
+</div>
+
+<p>the second :<b>CSS</b></p>
+<div class="code">
+#div {
+	background-color: #2196F3;
+	width: 400px;
+	height: 200px;
+	position: absolute;
+	right: 0;
+	opacity: 0;
+	transition:.5s;
+	margin: 0 5px 5px 0;
+}
+
+#div.popup{
+	position: fixed;
+	bottom: 0;
+	opacity: 1;
+}
+
+</div>
+<p>the third :<b>JS</b></p>
+<div class="code">
+document.addEventListener("scroll", popup);
+var div = document.getElementsByClassName("div")[0];
+var pop = parseInt(div.offsetTop);
+
+function popup ()
+{
+	var scroll = document.body.scrollTop;
+	var cName  = "";
+	if(scroll > pop - 445)
+	{
+		cName += "popup";
+	}
+	div.className = cName;
+}
+</div>
+</pre>
+		</section>
+
+		<section class="num4">
+			<div id="div" class="div">
+				<div class="pop-box">
+		      <h3>This is pop up</h3>
+				</div>
+			</div>
+		</section>
+	</div>
+<script src="script.js"></script>
+</body>
+</html>
